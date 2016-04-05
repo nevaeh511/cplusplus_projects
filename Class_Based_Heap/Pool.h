@@ -125,15 +125,3 @@ void Pool<T>::poke(void* t, char* p)
 {
 	new (t)char*(p);   // "Placement new"
 }
-
-
-
-/*
-I had a few challenges. First, I had a hard time figuring out how to link up the block of memory.
-I realized that the address of the next block, which was the pointer plus the size of an object, needed
-to be placed into the previous element. This was challenging thinking in raw bytes.
-Secondly, I was confused about how and where to move the free head pointer.
-What I found interesting is that a linked list can be viewed in a very interesting manner, without separate nodes.
-learning how to take an object and placing it into raw bytes was challenging as well as a good learning
-experience. 
-*/
